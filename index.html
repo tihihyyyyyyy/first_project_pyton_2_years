@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка умов у Python | Hit Hub</title>
+    <style>
+        :root {
+            --primary-color: #4B8BBE;
+            --secondary-color: #306998;
+            --accent-color: #FFD43B;
+            --dark-color: #212529;
+            --light-color: #F8F9FA;
+            --success-color: #28A745;
+            --code-bg: #1E1E1E;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #F0F2F5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 25px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .theory-section {
+            background-color: var(--light-color);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Стилізація коду а-ля Python IDE */
+        pre {
+            background-color: var(--code-bg);
+            color: #D4D4D4;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+
+        .keyword { color: #569CD6; font-weight: bold; }
+        .number { color: #B5CEA8; }
+        .string { color: #CE9178; }
+        .comment { color: #6A9955; font-style: italic; }
+
+        /* Тренажер */
+        .simulator {
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #FAF9F6;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .output-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--code-bg);
+            color: #A9FFB7;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            min-height: 40px;
+            white-space: pre-line;
+            border-left: 5px solid var(--success-color);
+        }
+
+        .highlight-line {
+            background-color: rgba(255, 212, 59, 0.2);
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🐍 Інтерактивний урок: Перевірка умов у Python</h1>
+
+    <!-- Блок теорії -->
+    <div class="theory-section">
+        <h2>1. Теоретична довідка</h2>
+        <p>У Python для прийняття рішень використовуються умовні оператори. Вони дозволяють виконувати певні блоки коду лише тоді, коли виконується (є істинною) якась умова.</p>
+        <ul>
+            <li><strong><code>if</code></strong> (якщо) — перша головна перевірка.</li>
+            <li><strong><code>elif</code></strong> (інакше якщо) — додаткові перевірки, якщо попередні умови не виконалися. Може бути декілька.</li>
+            <li><strong><code>else</code></strong> (інакше) — виконується, якщо жодна з попередніх умов не виявилася правильною.</li>
+        </ul>
+    </div>
+
+    <!-- Блок коду -->
+    <h2>2. Приклад коду на Python</h2>
+    <p>Розглянемо класичну програму для визначення типу температури води:</p>
+    <pre>
+<span class="keyword">if</span> t &gt;= <span class="number">100</span>:
+    <span class="keyword">print</span>(<span class="string">"Вода кипить (Пар)"</span>)
+<span class="keyword">elif</span> t &gt; <span class="number">0</span>:
+    <span class="keyword">print</span>(<span class="string">"Вода в рідкому стані"</span>)
+<span class="keyword">else</span>:
+    <span class="keyword">print</span>(<span class="string">"Вода замерзла (Лід)"</span>)</pre>
+
+    <!-- Інтерактивний тренажер -->
+    <div class="simulator">
+        <h2>🎯 3. Інтерактивний тренажер</h2>
+        <p>Введіть будь-яку температуру води в градусах Цельсія, щоб побачити, яка гілка умовного оператора спрацює.</p>
+        
+        <div class="input-group">
+            <label for="tempInput">Введіть температуру (t):</label>
+            <input type="number" id="tempInput" placeholder="Наприклад: 25, 105, -5" value="25">
+        </div>
+
+        <button onclick="runPythonSimulation()">Запустити "Python" код</button>
+
+        <h3>Результат виконання програми (Консоль):</h3>
+        <div class="output-box" id="consoleOutput">👉 Результат з'явиться тут після натискання кнопки.</div>
+    </div>
+</div>
+
+<script>
+    function runPythonSimulation() {
+        // Отримуємо значення з поля вводу
+        const inputVal = document.getElementById('tempInput').value;
+        const consoleOutput = document.getElementById('consoleOutput');
+        
+        // Перевірка на пусте поле
+        if (inputVal === '') {
+            consoleOutput.style.color = '#FF8888';
+            consoleOutput.textContent = 'Помилка: будь ласка, введіть число!';
+            return;
+        }
+
+        const t = parseFloat(inputVal);
+        let resultMessage = '';
+        let stepExplanation = '';
+
+        // Емуляція логіки Python за допомогою JavaScript
+        if (t >= 100) {
+            resultMessage = "Вода кипить (Пар)";
+            stepExplanation = `[Крок 1]: Перевірка (if ${t} >= 100) -> ПРАВДА (True).\n[Вивід]: ${resultMessage}`;
+        } else if (t > 0) {
+            resultMessage = "Вода в рідкому стані";
+            stepExplanation = `[Крок 1]: Перевірка (if ${t} >= 100) -> ХИБНІСТЬ (False).\n[Крок 2]: Перевірка (elif ${t} > 0) -> ПРАВДА (True).\n[Вивід]: ${resultMessage}`;
+        } else {
+            resultMessage = "Вода замерзла (Лід)";
+            stepExplanation = `[Крок 1]: Перевірка (if ${t} >= 100) -> ХИБНІСТЬ (False).\n[Крок 2]: Перевірка (elif ${t} > 0) -> ХИБНІСТЬ (False).\n[Крок 3]: Спрацювала гілка else.\n[Вивід]: ${resultMessage}`;
+        }
+
+        // Виводимо покроковий результат у консоль
+        consoleOutput.style.color = '#A9FFB7';
+        consoleOutput.textContent = `>>> Виконується код... \nВхідні дані: t = ${t}\n\n${stepExplanation}`;
+    }
+</script>
+
+</body>
+</html>
